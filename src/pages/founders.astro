@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Founders | Self Alchemy</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&family=Montserrat:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    :root {
+      --green: #65716b;
+      --green-dark: #102b1a;
+      --orange: #de7c01;
+      --cream: #f8f6f0;
+      --text: #222;
+      --muted: #666;
+      --border: #e3dfd4;
+      --white: #ffffff;
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+      margin: 0;
+
+      font-family: "Lato", sans-serif;
+
+      background: var(--cream);
+
+      color: var(--text);
+    }
+
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Montserrat", sans-serif;
+
+      font-weight: 600;
+    }
+
+
+    p {
+      color: var(--muted);
+
+      line-height: 1.7;
+    }
+
+
+    .site-header {
+      width: 100%;
+
+      padding: 20px 50px;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      background: white;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+
+    .site-header img {
+      width: 120px;
+
+      display: block;
+    }
+
+
+    .site-header nav {
+      display: flex;
+
+      gap: 28px;
+    }
+
+
+    .site-header nav a {
+      color: var(--green);
+
+      text-decoration: none;
+
+      font-weight: 700;
+    }
+
+
+    .site-header nav a:hover {
+      color: var(--orange);
+    }
+
+
+    .page-hero {
+      padding: 110px 20px;
+
+      background: var(--green);
+
+      text-align: center;
+    }
+
+
+    .page-hero p {
+      color: var(--orange);
+
+      font-size: 0.85rem;
+
+      font-weight: 700;
+
+      letter-spacing: 3px;
+    }
+
+
+    .page-hero h1 {
+      max-width: 800px;
+
+      margin: 15px auto 20px;
+
+      color: white;
+
+      font-size: 3.5rem;
+    }
+
+
+    .page-hero .intro {
+      max-width: 650px;
+
+      margin: 0 auto;
+
+      color: #e6ebe7;
+
+      font-size: 1.1rem;
+    }
+
+
+    .founder-section {
+      padding: 110px 20px;
+    }
+
+
+    .founder-section:nth-child(odd) {
+      background: white;
+    }
+
+
+    .founder-section:nth-child(even) {
+      background: var(--cream);
+    }
+
+
+    .founder-inner {
+      max-width: 1050px;
+
+      margin: 0 auto;
+
+      display: grid;
+
+      grid-template-columns: 350px 1fr;
+
+      gap: 80px;
+
+      align-items: center;
+    }
+
+
+    .founder-section:nth-child(even) .founder-inner {
+      grid-template-columns: 1fr 350px;
+    }
+
+
+    .founder-section:nth-child(even) .founder-image {
+      order: 2;
+    }
+
+
+    .founder-section:nth-child(even) .founder-copy {
+      order: 1;
+    }
+
+
+    .founder-image {
+      width: 330px;
+
+      height: 420px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      background: var(--cream);
+
+      border: 2px solid var(--orange);
+
+      border-radius:
+        48% 52% 45% 55%
+        / 52% 45% 55% 48%;
+
+      color: var(--orange);
+
+      font-family: "Montserrat", sans-serif;
+
+      font-weight: 600;
+
+      text-align: center;
+
+      overflow: hidden;
+    }
+
+    .founder-image img {
+      width: 120%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 60%;
+      transform: translateX(-30px);
+    }
+
+    .founder-2 .founder-image img {
+      width: 210%;
+      height: 200%;
+      object-fit: none;
+      object-position: top 75%;
+      transform: translateX(-35px);
+    }
+
+    .founder-3 .founder-image img {
+      width: 130%;
+      height: 128%;
+      object-fit: none;
+      object-position: top 95%;
+      transform: translateX(-40px);            
+    }
+
+    .founder-section:nth-child(even) .founder-image {
+      border-color: var(--green);
+
+      background: white;
+
+      color: var(--green);
+    }
+
+
+    .founder-copy .label {
+      margin-bottom: 10px;
+
+      color: var(--orange);
+
+      font-size: 0.82rem;
+
+      font-weight: 700;
+
+      letter-spacing: 2.5px;
+    }
+
+
+    .founder-copy h2 {
+      margin: 0 0 8px;
+
+      color: var(--green);
+
+      font-size: 2.5rem;
+    }
+
+
+    .founder-copy h3 {
+      margin: 0 0 25px;
+
+      color: var(--orange);
+
+      font-size: 1rem;
+    }
+
+
+    .founder-copy .bio-space {
+      min-height: 220px;
+    }
+
+
+    .founder-cta {
+      padding: 100px 20px;
+
+      background: var(--green);
+
+      text-align: center;
+    }
+
+
+    .founder-cta h2 {
+      color: white;
+
+      font-size: 2.4rem;
+    }
+
+
+    .founder-cta p {
+      max-width: 600px;
+
+      margin: 0 auto 30px;
+
+      color: #e3e8e4;
+    }
+
+
+    .cta-button {
+      display: inline-block;
+
+      padding: 14px 28px;
+
+      background: var(--orange);
+
+      color: white;
+
+      border-radius: 8px;
+
+      text-decoration: none;
+
+      font-weight: 700;
+    }
+
+
+    .cta-button:hover {
+      background: white;
+
+      color: var(--green);
+    }
+
+
+    .site-footer {
+      padding: 40px 20px;
+
+      background: var(--green-dark);
+
+      text-align: center;
+
+      color: #bbb;
+    }
+
+
+    .site-footer a {
+      color: white;
+
+      text-decoration: none;
+    }
+
+
+    @media (max-width: 700px) {
+
+      .site-header {
+        padding: 15px 20px;
+      }
+
+
+      .site-header img {
+        width: 105px;
+      }
+
+
+      .site-header nav {
+        gap: 12px;
+
+        flex-wrap: wrap;
+
+        justify-content: flex-end;
+      }
+
+
+      .site-header nav a {
+        font-size: 0.78rem;
+      }
+
+
+      .page-hero {
+        padding: 80px 20px;
+      }
+
+
+      .page-hero h1 {
+        font-size: 2.4rem;
+      }
+
+
+      .founder-section {
+        padding: 80px 20px;
+      }
+
+
+      .founder-inner,
+      .founder-section:nth-child(even) .founder-inner {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+      }
+
+
+      .founder-section:nth-child(even) .founder-image,
+      .founder-section:nth-child(even) .founder-copy {
+        order: initial;
+      }
+
+
+      .founder-image {
+        width: 100%;
+
+        max-width: 350px;
+
+        height: 380px;
+
+        margin: 0 auto;
+      }
+
+
+      .founder-copy {
+        text-align: center;
+      }
+
+
+      .founder-copy .bio-space {
+        min-height: 180px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+
+    <a href="/">
+
+      <img
+        src="/WhatsApp Image 2026-08-06 at 5.22.18 AM 1.png"
+        alt="Self Alchemy logo"
+      />
+
+    </a>
+
+
+    <nav>
+
+      <a href="/#how-it-works">
+        How It Works
+      </a>
+
+      <a href="/#retreats">
+        Retreats
+      </a>
+
+      <a href="/founders">
+        Founders
+      </a>
+
+      <a href="/#faq">
+        FAQ
+      </a>
+
+      <a href="/#interview">
+        Book
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <!-- PAGE INTRO -->
+
+  <section class="page-hero">
+
+    <p>
+      THE PEOPLE BEHIND SELF ALCHEMY
+    </p>
+
+    <h1>
+      Meet Our Founders
+    </h1>
+
+    <div class="intro">
+      Together, we created Self Alchemy to make transformation experiential — not merely theoretical.
+
+    </div>
+
+  </section>
+
+
+  <!-- FOUNDER 1 -->
+
+  <section class="founder-section">
+
+    <div class="founder-inner">
+
+      <div class="founder-image">
+
+        Founder 1<br>
+        <img src="/images/founder-karthik.png" alt="Founder Karthik's Picture">
+
+      </div>
+
+
+      <div class="founder-copy">
+
+        <div class="label">
+          FOUNDER
+        </div>
+
+        <h2>
+          Karthik Ritty Sudarshan
+        </h2>
+
+        <h3>
+          Founder & Mentor, Self Alchemy
+        </h3>
+
+
+        <div class="bio-space">
+
+          <p>
+            Karthik Ritty Sudarshan is an astrologer, life coach, and mentor who brings together traditional astrological wisdom, self-reflection, and practical coaching to help people understand themselves and navigate life's important questions.
+
+          </p>
+
+          <p>
+             His work is rooted in the belief that meaningful transformation begins with self-awareness. Rather than simply providing answers, Karthik encourages people to explore the beliefs, values, emotional patterns, and perspectives that shape their choices and relationships.
+
+          </p>
+
+          <p>
+              Through his work with individuals and groups, he has developed an experiential approach to transformation that combines Astrology, Life Coaching, reflective practices, stories, metaphors, and guided exercises. His focus is on helping people move from intellectual understanding to insights that can be consciously applied in everyday life.
+
+
+          </p>
+
+          <p>
+              As the founder of Self Alchemy, Karthik envisioned creating a space where people could step away from the noise of everyday life, look within, and explore themselves with greater honesty and curiosity. This vision has evolved into immersive Self Alchemy retreats focused on areas such as relationships, career, purpose, and personal transformation.
+
+
+          </p>
+
+          <p>
+              At Self Alchemy, Karthik leads the design and facilitation of the programs, bringing together diverse tools and perspectives to create experiences that are both deeply reflective and practically transformative.
+
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOUNDER 2 -->
+
+  <section class="founder-section founder-2">
+
+    <div class="founder-inner">
+
+      <div class="founder-image">
+
+        Founder 2<br>
+         <img src="/images/founder-muthu.png" alt="Co-founder Muthu's Picture">
+
+      </div>
+
+
+      <div class="founder-copy">
+
+        <div class="label">
+          CO-FOUNDER
+        </div>
+
+        <h2>
+          Muthu Vijayan Elango
+        </h2>
+
+        <h3>
+          Co-Founder & Mentor, Self Alchemy
+        </h3>
+
+
+        <div class="bio-space">
+
+          <p>
+            Muthu Vijayan Elango is an astrologer, educator, author, life coach, and entrepreneur who has dedicated more than two decades to the study and practice of Jyotisha.
+          </p>
+
+          <p>
+            His journey began in 2002 under the guidance of his father and mentor, Shri Elango Annamalai, whose five decades of astrological experience deeply influenced his approach to astrology, teaching, and consulting. Over the years, Muthu has combined traditional astrological wisdom with modern approaches to coaching, self-reflection, and practical problem-solving.
+
+          </p>
+
+          <p>
+            He has taught Vedic Astrology to more than 6,000 learners through online education, with many students going on to pursue astrology professionally. He has also conducted thousands of one-to-one astrological consultations and continues to mentor students and practitioners in their study and application of astrology.
+
+          </p>
+
+          <p>
+            Muthu is the author of Achieving Success Through Astrological Guidance and An Astrological Study of Modern Careers. He is also a columnist for APAI's quarterly journal, The APAI Chronycle.
+
+
+          </p>
+
+          <p>
+            He is the founder of Teksage, a voice-based, multilingual astrology platform that combines traditional Vedic astrology with modern AI technology to make personalised astrological guidance more accessible.
+
+
+
+          </p>
+
+          <p>
+            At Self Alchemy, Muthu brings together astrology, life coaching, teaching experience, technology, and practical consulting to help participants turn astrological insights into deeper self-awareness and meaningful real-world action.
+
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOUNDER 3 -->
+
+  <section class="founder-section founder-3">
+
+    <div class="founder-inner">
+
+      <div class="founder-image">
+
+        Founder 3<br>
+        <img src="/images/founder-aswin.png" alt="Co-founder Aswin's Picture">
+
+      </div>
+
+
+      <div class="founder-copy">
+
+        <div class="label">
+          CO-FOUNDER
+        </div>
+
+        <h2>
+          Aswin Subramanyan
+        </h2>
+
+        <h3>
+          Co-Founder & Mentor, Self Alchemy
+        </h3>
+
+
+        <div class="bio-space">
+
+          <p>
+           Aswin Subramanyan traces his astrological lineage through more than 350 years of maternal heritage. He began his formal study in 2010–11 under his granduncle Shri G. Gurumoorthy Iyer and has since developed a deep engagement with traditional astrological systems. 
+          </p>
+
+          <p>
+            Rooted in the Vedic tradition, Aswin also integrates Hellenistic and Persian astrology into his work, bringing together diverse streams of classical astrological knowledge within a coherent framework.
+
+          </p>
+            
+          <p>
+            He holds a Diploma in Traditional Natal Predictive Astrology and an M.A. in Indian Astrology, and is currently pursuing a PhD. He is the author of Firdaria – Periods of Life and the multi-volume series Foundations and Frameworks of Indian Astrology, beginning with Volume I: Essentials of Jyotiṣa. He is also the co-author of Astrology by Moonlight.
+          </p>
+
+          <p>
+            Aswin serves on the Council of the Association for Professional Astrologers International (APAI) and is the editor of its quarterly journal, The APAI Chronycle. He is also a board member of CAPISAR and a columnist for the Organisation for Professional Astrology's The Evolving Astrologer Magazine.
+
+          </p>
+
+          <p>
+            A dedicated teacher and researcher of traditional astrology, Aswin teaches internationally and has presented at astrological organisations and conferences across Europe, North America, Asia, and Australia. He is also a faculty member at Kepler College and AstroCollege.
+          </p>
+
+          <p>
+            At Self Alchemy, Aswin brings his extensive knowledge of traditional astrology, research, teaching, and cross-cultural astrological traditions to help participants explore the deeper patterns and possibilities reflected in their individual astrological charts.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+
+  <section class="founder-cta">
+
+    <h2>
+      Have a conversation with us.
+    </h2>
+
+    <p>
+      If you'd like to explore how Self Alchemy can help,
+      we'd be happy to hear from you.
+    </p>
+
+    <a
+      class="cta-button"
+      href="/#journey"
+    >
+      Begin your journey
+    </a>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer class="site-footer">
+
+    <p>
+      <a href="/">
+        ← Back to Self Alchemy
+      </a>
+    </p>
+
+    <p>
+      © 2026 Self Alchemy. All rights reserved.
+    </p>
+
+  </footer>
+
+
+</body>
+
+</html>
+
+
+
+
