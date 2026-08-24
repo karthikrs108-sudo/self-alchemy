@@ -242,6 +242,7 @@ const founders = [
               Self Alchemy is about helping you understand yourself well enough
               to participate consciously in creating a meaningful life
             </p>
+            
 
           </div>
 
@@ -274,7 +275,7 @@ const founders = [
           <div class="explore-grid">
 
             <article class="explore-card">
-              <span class="card-number">01</span>
+              <span class="card-number">1</span>
               <h3>Relationships & Marriage</h3>
               <p>
                 Understand relationship patterns, emotional triggers,
@@ -285,7 +286,7 @@ const founders = [
 
 
             <article class="explore-card">
-              <span class="card-number">02</span>
+              <span class="card-number">2</span>
               <h3>Career & Life Direction</h3>
               <p>
                 Gain clarity about your strengths, values, natural
@@ -296,7 +297,7 @@ const founders = [
 
 
             <article class="explore-card">
-              <span class="card-number">03</span>
+              <span class="card-number">3</span>
               <h3>Major Life Decisions</h3>
               <p>
                 When you're standing at a crossroads, gain a deeper
@@ -306,7 +307,7 @@ const founders = [
 
 
             <article class="explore-card">
-              <span class="card-number">04</span>
+              <span class="card-number">4</span>
               <h3>Personal Growth</h3>
               <p>
                 Explore your core identity, limiting beliefs, values,
@@ -317,7 +318,7 @@ const founders = [
 
 
             <article class="explore-card">
-              <span class="card-number">05</span>
+              <span class="card-number">5</span>
               <h3>Purpose & Vision</h3>
               <p>
                 Move beyond simply asking <em>"What should I do?"</em>
@@ -327,7 +328,7 @@ const founders = [
 
 
             <article class="explore-card">
-              <span class="card-number">06</span>
+              <span class="card-number">6</span>
               <h3>Life Transitions</h3>
               <p>
                 Navigate periods of change with greater
@@ -579,7 +580,7 @@ const founders = [
 
           <!-- Small 3-person visual grouping -->
 
-          <div class="founder-orbit">
+          <!-- <div class="founder-orbit">
 
             <!-- <div class="founder-circle founder-circle-one">
               <img
@@ -602,14 +603,14 @@ const founders = [
             />
           </div> -->
 
-            <div class="orbit-center">
+            <!-- <div class="orbit-center">
               <img
                 src="/No BG Logo.png"
                 alt="Self Alchemy"
               />
-            </div>
+            </div> 
 
-          </div>
+          </div>  -->
 
 
           <div class="founder-grid">
@@ -1063,10 +1064,10 @@ const founders = [
 
           <div class="final-buttons">
 
-            <a href="#journey" class="cta-button light-button">
+            <!-- <a href="#journey" class="cta-button light-button">
               Start Your Self Alchemy Journey
               <span>→</span>
-            </a>
+            </a> -->
 
             <a
               href="https://wa.me/918951498824"
@@ -1462,8 +1463,10 @@ const founders = [
       }
 
       .hero h1 {
-        margin: 20px 0 28px;
+        margin: 10px 0 20px;
+        font-size: 3.85rem;
       }
+      
 
       .hero-lead {
         max-width: 600px;
@@ -1657,7 +1660,7 @@ const founders = [
       .how-statement {
         position: relative;
 
-        max-width: 1050px;
+        max-width: 850px;
         margin: 70px auto 0;
         padding: 35px 45px;
         font-size: 4rem;
@@ -1671,6 +1674,10 @@ const founders = [
         text-align: center;
 
         
+      }
+
+      .how-statement p {
+        font-size: 4rem;
       }
 
       .statement-mark {
@@ -1718,6 +1725,8 @@ const founders = [
         border: 1px solid var(--border);
         border-radius: var(--radius);
 
+        text-align: center;
+
         transition:
           transform 0.2s ease,
           border-color 0.2s ease;
@@ -1733,7 +1742,7 @@ const founders = [
         margin-bottom: 35px;
 
         color: var(--orange);
-        font-size: 0.75rem;
+        font-size: 2.0rem;
         font-weight: 800;
       }
 
@@ -1983,6 +1992,11 @@ const founders = [
         font-size: 1.15rem;
       }
 
+      .founders h2 {
+        color: var(--orange);
+        
+      }
+
       .founder-orbit {
         position: relative;
 
@@ -2189,6 +2203,11 @@ const founders = [
         background: white;
       }
 
+      .testimonials h2 {
+        color: var(--orange);
+        
+      }
+
       .testimonial-video-placeholder,
       .promo-placeholder {
         min-height: 350px;
@@ -2217,6 +2236,8 @@ const founders = [
       .testimonial-video-placeholder small {
         color: rgba(255,255,255,0.55);
       }
+
+
 
       .testimonial-grid {
         display: grid;
@@ -2247,6 +2268,11 @@ const founders = [
       .promo-video {
         padding: 120px 0;
         background: var(--cream-dark);
+      }
+
+      .promo-video h2 {
+        color: var(--orange);
+        
       }
 
       .promo-placeholder {
@@ -2638,11 +2664,9 @@ const founders = [
             text-align: center;
           }
 
-
+        
 
         }
-
-        
 
         .founder-grid {
           grid-template-columns: 1fr;
@@ -2750,11 +2774,7 @@ const founders = [
           flex-direction: column;
         }
 
-        .founder-orbit {
-          transform: scale(0.85);
-          margin-top: 30px;
-          margin-bottom: 30px;
-        }
+        
 
       }
 
