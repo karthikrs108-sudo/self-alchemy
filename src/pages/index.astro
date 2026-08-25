@@ -47,7 +47,7 @@ const founders = [
         />
       </a>
 
-      <nav>
+      <nav id="main-nav">
         <a href="#how-it-works">How It Works</a>
         <a href="#retreats">Retreats</a>
         <a href="/founders">Founders</a>
@@ -57,6 +57,18 @@ const founders = [
       <a href="#journey" class="header-cta">
         Begin Your Journey
       </a>
+
+      <!-- MOBILE MENU BUTTON -->
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
     </header>
 
@@ -205,7 +217,7 @@ const founders = [
 
               <p>
                 Explore your <strong>core identity, values, beliefs,
-                emotional patterns, and astrological blueprint</strong>
+                emotional patterns, and astrological blueprint</strong>,
                 to understand what may be shaping your career choices
                 and relationships.
               </p>
@@ -242,6 +254,8 @@ const founders = [
               Self Alchemy is about helping you understand yourself well enough
               to participate consciously in creating a meaningful life
             </p>
+
+            <span class="statement-mark closing-mark">”</span>
             
 
           </div>
@@ -277,10 +291,14 @@ const founders = [
             <article class="explore-card">
               <span class="card-number">1</span>
               <h3>Relationships & Marriage</h3>
-              <p>
+              <!--<p>
                 Understand relationship patterns, emotional triggers,
                 compatibility, communication, and the deeper dynamics
                 shaping your connection.
+              </p> -->
+
+              <p>
+                Understand the patterns, emotions, and dynamics shaping your relationships
               </p>
             </article>
 
@@ -288,10 +306,14 @@ const founders = [
             <article class="explore-card">
               <span class="card-number">2</span>
               <h3>Career & Life Direction</h3>
-              <p>
+              <!--<p>
                 Gain clarity about your strengths, values, natural
                 tendencies, professional choices, and the direction
                 that feels meaningful to you.
+              </p>-->
+
+              <p>
+                Gain clarity about your strengths, choices, and meaningful direction
               </p>
             </article>
 
@@ -299,30 +321,44 @@ const founders = [
             <article class="explore-card">
               <span class="card-number">3</span>
               <h3>Major Life Decisions</h3>
-              <p>
+              <!--<p>
                 When you're standing at a crossroads, gain a deeper
                 perspective before making an important decision.
+              </p>-->
+
+              <p>
+                Gain deeper perspective when facing important choices and turning points
               </p>
+
             </article>
 
 
             <article class="explore-card">
               <span class="card-number">4</span>
               <h3>Personal Growth</h3>
-              <p>
+              <!--<p>
                 Explore your core identity, limiting beliefs, values,
                 emotional patterns, and the areas where you are ready
                 to grow.
-              </p>
+              </p>-->
+
+               <p>
+                  Explore your identity, beliefs, values, emotional patterns, and areas for growth
+              </p>   
+            
             </article>
 
 
             <article class="explore-card">
               <span class="card-number">5</span>
               <h3>Purpose & Vision</h3>
-              <p>
+              <!--<p>
                 Move beyond simply asking <em>"What should I do?"</em>
                 and explore <em>"What kind of life do I want to create?"</em>
+              </p>-->
+
+              <p>
+                Go beyond ‘What should I do?’ to discover ‘What kind of life do I want to create?
               </p>
             </article>
 
@@ -1150,17 +1186,18 @@ const founders = [
 
         <div>
 
-          <a href="#">
+          <a href="https://sites.google.com/d/1UzP6miwGWjUzMLiuCWiGiD5e0zAdOvQR/p/1q4B_I1-F3z37UQWlDJAdzi8hyHtvrV2v/edit
+">
             Privacy Policy
           </a>
 
-          <a href="#">
+          <a href="https://sites.google.com/d/1CqL_fnmV0BRH9xnMRbktyvuZRTBOpcg_/p/1t-8rt3PdzGHVj59oZNSorKIOlL-Jnqx4/edit">
             Terms
           </a>
 
-          <a href="#">
+          <!--<a href="#">
             Disclaimer
-          </a>
+          </a>-->
 
         </div>
 
@@ -1677,7 +1714,10 @@ const founders = [
       }
 
       .how-statement p {
-        font-size: 4rem;
+        margin: 0;
+        font-size: 1.35rem !important;
+        line-height: 1.6;
+        font-weight: 500;
       }
 
       .statement-mark {
@@ -1688,6 +1728,13 @@ const founders = [
         color: var(--orange-light);
         font-size: 4rem;
         line-height: 1;
+      }
+
+      .closing-mark {
+        left: auto;
+        right: 25px;
+        top: auto;
+        bottom: 5px;
       }
 
       .how-statement p {
@@ -2674,6 +2721,8 @@ const founders = [
           margin: 0 auto;
         }
 
+      
+
         .testimonial-grid {
           grid-template-columns: repeat(2, 1fr);
         }
@@ -2682,64 +2731,35 @@ const founders = [
           max-width: 600px;
         }
 
+        .form-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 22px;
       }
 
+      }
+
+
+      /* ==================================================
+        MOBILE MENU
+      ================================================== */
+
+      .menu-toggle {
+        display: none;
+      }
+
+
+      /* ==================================================
+        MOBILE
+      ================================================== */
 
       @media (max-width: 700px) {
 
         .site-header {
-          padding: 14px 20px;
+          position: relative;
         }
 
-        .site-header nav {
-          display: none;
-        }
-
-        .header-cta {
-          padding: 9px 13px;
-          font-size: 0.75rem;
-        }
-
-        .section-container {
-          width: min(
-            calc(100% - 30px),
-            var(--max-width)
-          );
-        }
-
-        .hero-layout {
-          width: min(
-            calc(100% - 30px),
-            var(--max-width)
-          );
-        }
-
-        .hero {
-          padding: 70px 0 80px;
-        }
-
-        .hero-visual {
-          min-height: 320px;
-        }
-
-        .hero-visual-shape {
-          width: 300px;
-          height: 300px;
-        }
-
-        .about,
-        .how-it-works,
-        .explore,
-        .experiences,
-        .retreats,
-        .founders,
-        .testimonials,
-        .promo-video,
-        .faq,
-        .journey,
-        .final-cta {
-          padding: 80px 0;
-        }
+        
 
         .how-steps,
         .explore-grid,
@@ -2748,33 +2768,78 @@ const founders = [
           grid-template-columns: 1fr;
         }
 
-        .how-step {
-          min-height: auto;
-        }
-
-        .form-grid {
-          grid-template-columns: 1fr;
-          gap: 0;
-        }
-
-        .theme-item {
-          grid-template-columns: 1fr;
-          gap: 3px;
-        }
-
-        .footer-main {
-          grid-template-columns: 1fr 1fr;
-        }
-
-        .footer-brand {
-          grid-column: 1 / -1;
-        }
-
-        .footer-bottom {
-          flex-direction: column;
-        }
-
         
+
+        .menu-toggle {
+          display: flex;
+
+          width: 42px;
+          height: 42px;
+
+          padding: 8px;
+
+          border: none;
+          background: transparent;
+
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 5px;
+
+          cursor: pointer;
+        }
+
+        .menu-toggle span {
+          display: block;
+
+          width: 24px;
+          height: 2px;
+
+          background: var(--green);
+        }
+
+        /* Hide desktop navigation */
+        .site-header nav {
+          display: none;
+        }
+
+        /* Show mobile navigation when opened */
+        .site-header nav.mobile-open {
+          display: flex;
+
+          position: absolute;
+
+          top: 100%;
+          left: 0;
+          right: 0;
+
+          flex-direction: column;
+          gap: 0;
+
+          padding: 15px 20px;
+
+          background: var(--cream);
+
+          border-bottom: 1px solid var(--border);
+
+          box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+
+          z-index: 200;
+        }
+
+        .site-header nav.mobile-open a {
+          padding: 13px 5px;
+
+          border-bottom: 1px solid var(--border);
+        }
+
+        .site-header nav.mobile-open a:last-child {
+          border-bottom: none;
+        }
+
+        .header-cta {
+          display: none;
+        }
 
       }
 
@@ -2831,6 +2896,47 @@ const founders = [
         }
 
     </style>
+
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const mainNav = document.getElementById("main-nav");
+
+      menuToggle?.addEventListener("click", () => {
+
+        const isOpen = mainNav.classList.toggle("mobile-open");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          isOpen ? "true" : "false"
+        );
+
+        menuToggle.setAttribute(
+          "aria-label",
+          isOpen ? "Close menu" : "Open menu"
+        );
+
+      });
+
+      mainNav?.querySelectorAll("a").forEach((link) => {
+
+        link.addEventListener("click", () => {
+
+          mainNav.classList.remove("mobile-open");
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menuToggle.setAttribute(
+            "aria-label",
+            "Open menu"
+          );
+
+        });
+
+      });
+    </script>
 
   </body>
 </html>
