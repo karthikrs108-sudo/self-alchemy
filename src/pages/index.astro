@@ -54,7 +54,7 @@ const founders = [
         />
       </a>
 
-      <nav>
+      <nav id="main-nav">
         <a href="#what-is-self-alchemy">
           What Is Self Alchemy
         </a>
@@ -79,6 +79,19 @@ const founders = [
       <a href="#journey" class="header-cta">
         Book Your Slot
       </a>
+
+      <!-- MOBILE MENU BUTTON -->
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
 
     </header>
 
@@ -380,7 +393,7 @@ const founders = [
             <div class="how-step step-one">
 
               <div class="step-number">
-                01
+                1
               </div>
 
               <h3>
@@ -398,7 +411,7 @@ const founders = [
             <div class="how-step step-two">
 
               <div class="step-number">
-                02
+                2
               </div>
 
               <h3>
@@ -418,7 +431,7 @@ const founders = [
             <div class="how-step step-three">
 
               <div class="step-number">
-                03
+                3
               </div>
 
               <h3>
@@ -447,6 +460,9 @@ const founders = [
               It's about helping you understand yourself well enough
               to participate consciously in creating it.
             </p>
+
+             <span class="statement-mark closing-mark">”</span>
+              
 
           </div>
 
@@ -1709,9 +1725,13 @@ const founders = [
 
         border: 2px solid var(--green);
 
+        text-align: center;
+
         transition:
           transform 0.2s ease,
           box-shadow 0.2s ease;
+
+          
       }
 
       .how-step:hover {
@@ -1738,7 +1758,7 @@ const founders = [
 
         color: var(--orange);
 
-        font-size: 0.85rem;
+        font-size: 1.85rem;
         font-weight: 800;
 
         letter-spacing: 2px;
@@ -1752,19 +1772,21 @@ const founders = [
         position: relative;
 
         max-width: 850px;
-
         margin: 70px auto 0;
-
         padding: 35px 45px;
+        font-size: 4rem;
 
         border-radius: var(--radius);
+        
 
         background: var(--green);
-
         color: white;
 
         text-align: center;
+
+        
       }
+
 
       .statement-mark {
         position: absolute;
@@ -1779,10 +1801,19 @@ const founders = [
         line-height: 1;
       }
 
+       .closing-mark {
+        left: auto;
+        right: 25px;
+        top: auto;
+        bottom: 5px;
+      }
+
+
       .how-statement p {
         margin: 0;
 
-        font-size: 1.1rem;
+        font-size: 1.3rem;
+        font-weight: 500;
       }
 
 
@@ -2058,12 +2089,14 @@ const founders = [
 
       .journey-heading {
         max-width: 700px;
+        
 
         margin-bottom: 55px;
       }
 
       .journey-heading h2 {
         margin-bottom: 0;
+        color: white!important;
       }
 
       .journey-form {
@@ -2306,103 +2339,110 @@ const founders = [
       }
 
 
+      
+      /* ==================================================
+        MOBILE MENU
+      ================================================== */
+
+      .menu-toggle {
+        display: none;
+      }
+
+
+      /* ==================================================
+        MOBILE
+      ================================================== */
+
       @media (max-width: 700px) {
 
         .site-header {
-          padding: 14px 20px;
+          position: relative;
         }
 
+        
+
+        .how-steps,
+        .explore-grid,
+        .experience-grid,
+        .testimonial-grid {
+          grid-template-columns: 1fr;
+        }
+
+        
+
+        .menu-toggle {
+          display: flex;
+
+          width: 42px;
+          height: 42px;
+
+          padding: 8px;
+
+          border: none;
+          background: transparent;
+
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 5px;
+
+          cursor: pointer;
+        }
+
+        .menu-toggle span {
+          display: block;
+
+          width: 24px;
+          height: 2px;
+
+          background: var(--green);
+        }
+
+        /* Hide desktop navigation */
         .site-header nav {
           display: none;
         }
 
-        .header-cta {
-          padding: 9px 13px;
+        /* Show mobile navigation when opened */
+        .site-header nav.mobile-open {
+          display: flex;
 
-          font-size: 0.75rem;
-        }
+          position: absolute;
 
-        .section-container {
-          width: min(
-            calc(100% - 30px),
-            var(--max-width)
-          );
-        }
+          top: 100%;
+          left: 0;
+          right: 0;
 
-        .hero-layout {
-          width: min(
-            calc(100% - 30px),
-            var(--max-width)
-          );
-        }
-
-        .hero {
-          padding: 70px 0 80px;
-        }
-
-        .hero-visual {
-          min-height: 320px;
-        }
-
-        .hero-visual-shape {
-          width: 300px;
-          height: 300px;
-        }
-
-        .self-alchemy-section,
-        .next-self-alchemy,
-        .how-it-works,
-        .founders,
-        .testimonials,
-        .journey {
-          padding: 80px 0;
-        }
-
-        .how-steps {
-          grid-template-columns: 1fr;
-        }
-
-        .testimonial-video-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .testimonial-video iframe {
-          height: 300px;
-        }
-
-        .form-grid {
-          grid-template-columns: 1fr;
-
-          gap: 0;
-        }
-
-        .theme-item {
-          grid-template-columns: 1fr;
-
-          gap: 3px;
-        }
-
-        .footer-main {
-          grid-template-columns:
-            1fr 1fr;
-        }
-
-        .footer-brand {
-          grid-column: 1 / -1;
-        }
-
-        .footer-bottom {
           flex-direction: column;
+          gap: 0;
+
+          padding: 15px 20px;
+
+          background: var(--cream);
+
+          border-bottom: 1px solid var(--border);
+
+          box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+
+          z-index: 200;
         }
 
-        .founder-orbit {
-          transform: scale(0.85);
+        .site-header nav.mobile-open a {
+          padding: 13px 5px;
 
-          margin-top: 30px;
-          margin-bottom: 30px;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .site-header nav.mobile-open a:last-child {
+          border-bottom: none;
+        }
+
+        .header-cta {
+          display: none;
         }
 
       }
+
 
 
       @media (max-width: 450px) {
@@ -2461,5 +2501,50 @@ const founders = [
 
     </style>
 
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const mainNav = document.getElementById("main-nav");
+
+      menuToggle?.addEventListener("click", () => {
+
+        const isOpen = mainNav.classList.toggle("mobile-open");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          isOpen ? "true" : "false"
+        );
+
+        menuToggle.setAttribute(
+          "aria-label",
+          isOpen ? "Close menu" : "Open menu"
+        );
+
+      });
+
+      mainNav?.querySelectorAll("a").forEach((link) => {
+
+        link.addEventListener("click", () => {
+
+          mainNav.classList.remove("mobile-open");
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          menuToggle.setAttribute(
+            "aria-label",
+            "Open menu"
+          );
+
+        });
+
+      });
+    </script>
+
   </body>
 </html>
+ 
+
+
+  
