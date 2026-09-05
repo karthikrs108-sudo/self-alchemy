@@ -760,12 +760,7 @@ const founders = [
           </div>
 
 
-          <form
-            class="journey-form"
-            action="mailto:karthikrs108108@gmail.com"
-            method="post"
-            enctype="text/plain"
-          >
+          <form class="journey-form" id="journey-form">
 
             <div class="form-grid">
 
@@ -2786,6 +2781,35 @@ const founders = [
 
       updateCountdown();
       setInterval(updateCountdown, 1000);
+
+      const journeyForm = document.getElementById("journey-form");
+
+      journeyForm?.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const interest = document.getElementById("interest").value;
+        const message = document.getElementById("message").value;
+
+        const whatsappMessage = `Hello Self Alchemy,
+
+      I would like to book an interview.
+
+      Name: ${name}
+      Email: ${email}
+      Phone: ${phone}
+      Area of interest: ${interest || "Not specified"}
+
+      Message:
+      ${message || "Not provided"}`;
+
+        const whatsappUrl =
+          `https://wa.me/+919008477228?text=${encodeURIComponent(whatsappMessage)}`;
+
+        window.open(whatsappUrl, "_blank");
+      });
     </script>
 
   </body>
