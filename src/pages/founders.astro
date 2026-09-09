@@ -20,19 +20,34 @@
     rel="stylesheet"
   >
 
+  <link rel="icon" href="/Tab Logosq.png" />
+
 
   <style>
 
     :root {
-      --green: #65716b;
-      --green-dark: #102b1a;
-      --orange: #de7c01;
-      --cream: #f8f6f0;
-      --text: #222;
-      --muted: #666;
-      --border: #e3dfd4;
+      --green: #31594d;
+      --green-dark: #24463d;
+      --green-soft: #55766a;
+
+      --cream: #f6f0e4;
+      --cream-dark: #ebe0cf;
+
+      --orange: #c77b4a;
+      --orange-light: #dfa27a;
+
+      --text: #29342f;
+      --muted: #65716b;
       --white: #ffffff;
+
+      --border: rgba(49, 89, 77, 0.18);
+
+      --max-width: 1180px;
+      --radius: 22px;
     }
+
+
+    
 
 
     * {
@@ -75,7 +90,7 @@
     .site-header {
       width: 100%;
 
-      padding: 20px 50px;
+      padding: 05px 80px;
 
       display: flex;
 
@@ -83,14 +98,19 @@
 
       align-items: center;
 
-      background: white;
+      background: var(--cream);
 
       border-bottom: 1px solid var(--border);
+
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
     }
 
 
     .site-header img {
-      width: 120px;
+      width: 250px;
 
       display: block;
     }
@@ -98,8 +118,11 @@
 
     .site-header nav {
       display: flex;
-
       gap: 28px;
+      position: absolute;
+      left: 50%;
+      bottom: 10%;
+      transform: translateX(-30%);
     }
 
 
@@ -107,13 +130,37 @@
       color: var(--green);
 
       text-decoration: none;
-
+      font-size: 0.86rem;
       font-weight: 700;
     }
 
 
     .site-header nav a:hover {
       color: var(--orange);
+    }
+
+
+   .header-cta {
+      padding: 14px 18px;
+
+      border: 1px solid var(--green);
+      border-radius: 100px;
+
+      color: var(--green);
+
+      font-size: 0.85rem;
+      font-weight: 700;
+
+      transition: all 0.2s ease;
+
+      position: relative;
+      top: -15;
+      transform: translateX(220%);
+    }
+
+    .header-cta:hover {
+      background: var(--green);
+      color: white;
     }
 
 
@@ -369,30 +416,139 @@
       text-decoration: none;
     }
 
+    .menu-toggle {
+      display: none;
+    }
+
 
     @media (max-width: 700px) {
 
       .site-header {
-        padding: 15px 20px;
+        padding: 8px 20px;
+      }
+
+      .menu-toggle {
+        display: flex;
+
+        width: 42px;
+        height: 42px;
+
+        padding: 8px;
+
+        border: none;
+        background: transparent;
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+
+        cursor: pointer;
+      }
+
+      .menu-toggle span {
+        display: block;
+
+        width: 24px;
+        height: 2px;
+
+        background: var(--green);
       }
 
 
       .site-header img {
-        width: 105px;
+        width: 170px;
       }
-
 
       .site-header nav {
-        gap: 12px;
-
-        flex-wrap: wrap;
-
-        justify-content: flex-end;
+        display: none;
       }
+
+      .site-header nav.open {
+        display: flex;
+
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        right: auto;
+
+        transform: translateX(-50%);
+
+        width: 100%;
+        min-width: 480px;
+        min-height: 280px;
+        max-width: calc(100vw - 40px);
+
+        flex-direction: column;
+        align-items: center;
+
+        gap: 36px;
+
+        padding: 20px 30px;
+
+        background: var(--cream);
+
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        border-bottom: 1px solid var(--border);
+        text-decoration: underline;
+        text-decoration-color: rgba(49, 89, 77, 0.25);
+        text-underline-offset: 20px;
+
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      }
+
+      .site-header nav.open .header-cta {
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        background: none;
+
+        color: var(--green);
+
+        font-size: 0.86rem;
+        font-weight: 700;
+
+        text-decoration: none;
+      }
+
+    }
+
+      .site-header nav.open a {
+        width: 100%;
+        text-align: center;
+      }
+
+     
 
 
       .site-header nav a {
         font-size: 0.78rem;
+      }
+
+
+      .header-cta {
+        margin-left: 0%;
+        padding: 11px 18px;
+
+        border: 1px solid var(--green);
+        border-radius: 100px;
+
+        color: var(--green);
+
+        font-size: 0.85rem;
+        font-weight: 700;
+
+        transition: all 0.2s ease;
+
+        transform: none;
+        top: 0;
+        
+      }
+
+      .header-cta:hover {
+        background: var(--green);
+        color: white;
       }
 
 
@@ -462,36 +618,46 @@
     <a href="/">
 
       <img
-        src="/WhatsApp Image 2026-08-06 at 5.22.18 AM 1.png"
+        src="/No BG Logo.png"
         alt="Self Alchemy logo"
       />
 
     </a>
 
 
-    <nav>
+    
 
-      <a href="/#how-it-works">
-        How It Works
-      </a>
+  <nav id="main-nav">
 
-      <a href="/#retreats">
-        Retreats
-      </a>
+    <a href="/#what-is-self-alchemy">
+      What Is Self Alchemy
+    </a>
 
-      <a href="/founders">
-        Founders
-      </a>
+    <a href="/#next-self-alchemy">
+      Next Self Alchemy
+    </a>
 
-      <a href="/#faq">
-        FAQ
-      </a>
+    <a href="/#how-it-works">
+      How It Works
+    </a>
 
-      <a href="/#interview">
-        Book
-      </a>
+    <a href="/#testimonials">
+      Testimonials
+    </a>
 
-    </nav>
+    <a href="/#journey" class="header-cta">
+        Book Your Slot
+    </a>
+
+</nav>
+
+<button class="menu-toggle" id="menu-toggle" aria-label="Open menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+    
 
   </header>
 
@@ -739,10 +905,15 @@
 
     <a
       class="cta-button"
-      href="/#journey"
+      href="https://wa.me/919876543210?text=Hi%2C%20I'm%20interested%20in%20learning%20more%20about%20Self%20Alchemy%20and%20the%20upcoming%20experience."
+      class="next-form-button"
+      target="_blank"
+      rel="noopener"
     >
       Begin your journey
     </a>
+
+    
 
   </section>
 
@@ -762,6 +933,15 @@
     </p>
 
   </footer>
+
+  <script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const mainNav = document.getElementById("main-nav");
+
+  menuToggle?.addEventListener("click", () => {
+    mainNav.classList.toggle("open");
+  });
+</script>
 
 
 </body>
