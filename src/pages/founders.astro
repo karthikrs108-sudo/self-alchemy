@@ -20,20 +20,34 @@
     rel="stylesheet"
   >
 
+  <link rel="icon" href="/Tab Logosq.png" />
+
 
   <style>
 
     :root {
-      --green: #31594d; 
-      --green-dark: #102b1a;
-      --orange: #de7c01;
+      --green: #31594d;
+      --green-dark: #24463d;
+      --green-soft: #55766a;
+
       --cream: #f6f0e4;
-      --cream-dark: #ebe0cf; 
-      --text: #222;
-      --muted: #666;
-      --border: #e3dfd4;
+      --cream-dark: #ebe0cf;
+
+      --orange: #c77b4a;
+      --orange-light: #dfa27a;
+
+      --text: #29342f;
+      --muted: #65716b;
       --white: #ffffff;
+
+      --border: rgba(49, 89, 77, 0.18);
+
+      --max-width: 1180px;
+      --radius: 22px;
     }
+
+
+    
 
 
     * {
@@ -76,7 +90,7 @@
     .site-header {
       width: 100%;
 
-      padding: 20px 50px;
+      padding: 05px 80px;
 
       display: flex;
 
@@ -87,11 +101,16 @@
       background: var(--cream);
 
       border-bottom: 1px solid var(--border);
+
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
     }
 
 
     .site-header img {
-      width: 120px;
+      width: 250px;
 
       display: block;
     }
@@ -99,8 +118,11 @@
 
     .site-header nav {
       display: flex;
-
       gap: 28px;
+      position: absolute;
+      left: 50%;
+      bottom: 10%;
+      transform: translateX(-30%);
     }
 
 
@@ -108,13 +130,37 @@
       color: var(--green);
 
       text-decoration: none;
-
+      font-size: 0.86rem;
       font-weight: 700;
     }
 
 
     .site-header nav a:hover {
       color: var(--orange);
+    }
+
+
+   .header-cta {
+      padding: 14px 18px;
+
+      border: 1px solid var(--green);
+      border-radius: 100px;
+
+      color: var(--green);
+
+      font-size: 0.85rem;
+      font-weight: 700;
+
+      transition: all 0.2s ease;
+
+      position: relative;
+      top: -15;
+      transform: translateX(220%);
+    }
+
+    .header-cta:hover {
+      background: var(--green);
+      color: white;
     }
 
 
@@ -382,7 +428,6 @@
         width: 105px;
       }
 
-
       .site-header nav {
         gap: 12px;
 
@@ -394,6 +439,27 @@
 
       .site-header nav a {
         font-size: 0.78rem;
+      }
+
+
+      .header-cta {
+        margin-left: auto;
+        padding: 11px 18px;
+
+        border: 1px solid var(--green);
+        border-radius: 100px;
+
+        color: var(--green);
+
+        font-size: 0.85rem;
+        font-weight: 700;
+
+        transition: all 0.2s ease;
+      }
+
+      .header-cta:hover {
+        background: var(--green);
+        color: white;
       }
 
 
@@ -470,29 +536,33 @@
     </a>
 
 
-    <nav>
+    
 
-      <a href="/#how-it-works">
-        How It Works
-      </a>
+  <nav id="main-nav">
 
-      <a href="/#retreats">
-        Retreats
-      </a>
+    <a href="/#what-is-self-alchemy">
+      What Is Self Alchemy
+    </a>
 
-      <a href="/founders">
-        Founders
-      </a>
+    <a href="/#next-self-alchemy">
+      Next Self Alchemy
+    </a>
 
-      <a href="/#faq">
-        FAQ
-      </a>
+    <a href="/#how-it-works">
+      How It Works
+    </a>
 
-      <a href="/#interview">
-        Book
-      </a>
+    <a href="/#testimonials">
+      Testimonials
+    </a>
 
-    </nav>
+    <a href="/#journey" class="header-cta">
+        Book Your Slot
+    </a>
+
+</nav>
+
+    
 
   </header>
 
