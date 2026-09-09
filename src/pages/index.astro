@@ -38,12 +38,8 @@ const founders = [
       content="Self Alchemy brings together Astrology, Psychology-informed self-reflection, and guided mentorship to create meaningful transformation."
     />
 
-<<<<<<< HEAD
-    <link rel="icon" href="/No BG Logo.png" />
-=======
 
     <link rel="icon" href="/Tab Logosq.png" />
->>>>>>> dev
   </head>
 
   <body>
@@ -972,21 +968,21 @@ const founders = [
             Connect
           </h4>
 
-          <a href="https://www.instagram.com/YOUR_USERNAME/" target="_blank" rel="noopener noreferrer">
+          <a class="social-disabled"> <!-- href="https://www.instagram.com/YOUR_USERNAME/" target="_blank" rel="noopener noreferrer"> -->
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path fill="currentColor" d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm8.65 1.5a1.35 1.35 0 1 1 0 2.7 1.35 1.35 0 0 1 0-2.7ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
             </svg>
             
           </a>
 
-          <a href="https://www.youtube.com/YOUR_CHANNEL" target="_blank" rel="noopener noreferrer">
+          <a class="social-disabled"> <!-- href="https://www.youtube.com/YOUR_CHANNEL" target="_blank" rel="noopener noreferrer"> -->
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.5v-7l6 3.5-6 3.5Z"/>
             </svg>
             
           </a>
 
-          <a href="https://www.linkedin.com/in/YOUR_USERNAME/" target="_blank" rel="noopener noreferrer">
+          <a class="social-disabled"> <!-- href="https://www.linkedin.com/in/YOUR_USERNAME/" target="_blank" rel="noopener noreferrer"> -->
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path fill="currentColor" d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2ZM8 19H5V9h3v10ZM6.5 7.7A1.75 1.75 0 1 1 6.5 4.2a1.75 1.75 0 0 1 0 3.5ZM19 19h-3v-5.2c0-1.25 0-2.85-1.75-2.85S12.5 12.5 12.5 13.75V19h-3V9h2.9v1.37h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.62 2 3.62 4.6V19Z"/>
             </svg>
@@ -999,6 +995,8 @@ const founders = [
             </svg>
             
           </a>
+
+          <!-- FOR MAKING THE SOCIAL MEDIA LINKS working, once you get the link, you need to remove the social media disabled section in the last part of css and also remove the class="social-disabled"> in html above with the last ">" and then remove the exlamation square brancket from each and add the links to href -->
 
         </div>
 
@@ -2477,7 +2475,10 @@ const founders = [
         gap: 20px;
       }
 
-      
+      .social-links a.disabled { /*disabled Social media links */
+        pointer-events: none;
+        cursor: default;
+      }
 
 
       /* ==================================================
@@ -2685,13 +2686,6 @@ const founders = [
       .countdown strong {
         font-size: 1.6rem;
       }
-
-
-      
-
-      
-
-
 
       @media (max-width: 450px) {
 
